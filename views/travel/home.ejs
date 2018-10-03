@@ -1,0 +1,180 @@
+<%include partials/header%>
+<link rel="stylesheet" href="stylesheet/footer.css">
+<div class="container">
+            <p class="lead mt-4 text-muted">We will fit you into the best group suitable</p>
+    <div class="row">
+        <div class="col-sm-2">    
+        <a href="" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">Pick travel days</a>
+        </div>
+        <div class="col">
+            <a href="" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">Random Location</a>
+        </div>
+        <!-- Button trigger modal -->
+        
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" id="exampleModalLongTitle">Join a group</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput"class="lead">Country</label>
+                                <input type="text" class="form-control text-center" id="formGroupExampleInput" placeholder="What Country do you want to visit?">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2" class="lead">City</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="City">
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Date From & Date To </span>
+                                </div>
+                                <input type="date" aria-label="First name" class="form-control">
+                                <input type="date" aria-label="Last name" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                     <p class="lead text-center">Feel free to join New people and travel</p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Join</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <h1 class="lead md-3" style="margin:80px;">Share your experience with the world</h1>
+            </div>
+        </div>
+        <div class="col-md-4 m-auto">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="custom-file mb-3">
+                    <input type="file" id="myFile" class="custom-file-input" name="file">
+                    <label for="" class="custom-file-label">Share your pictures from the trip</label>
+                </div>
+                <input type="submit" class="btn btn-primary btn-block">
+            </form>
+        </div>
+    </div>
+   
+   
+    <hr>
+    <div class="row">
+        <div class="col">
+            <div class="card card-body">
+                <h1 class="lead text-center">Groups recently attended</h1>
+            <a href=""id="ui modal"class="btn btn-success">start a new group</a>
+<!-- this is where the group application will begin -->
+                <div class="ui modal">
+                    <i class="close icon"></i>
+                    <div class="header">
+                        Profile Picture
+                    </div>
+                    <div class="image content">
+                        <div class="ui medium image">
+                            <img src="/images/avatar/large/chris.jpg">
+                        </div>
+                        <div class="description">
+                            <div class="ui header">We've auto-chosen a profile image for you.</div>
+                            <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a>
+                                image associated with your registered e-mail address.</p>
+                            <p>Is it okay to use this photo?</p>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <div class="ui black deny button">
+                            Nope
+                        </div>
+                        <div class="ui positive right labeled icon button">
+                            Yep, that's me
+                            <i class="checkmark icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+            <ul class="mt-4">
+                <li class="lead"> <span style="color:green;">
+                    <a href="" class="btn btn-secondary" style="font-size:10px;  margin-right:39px; "> Rejoin Group</a>
+                    Mega group China
+                </span> </li>
+                <small class="blockquote-footer">closed by admin</small>
+            </ul>
+            <ul class="mt-4">
+                <li class="lead"> <span style="color:green;">
+                    <a href="" class="btn btn-primary" style="font-size:10px;  margin-right:39px; "> Rejoin Group</a>
+                        Mega group China
+                    </span> 
+               </li></li>
+                <p class="alert  blockquote-footer">no of members 10</p>
+            </ul>
+            <ul class="mt-4">
+                <li class="lead"> <span style="color:green;">
+                    <a href="" class="btn btn-dark" style="font-size:10px;  margin-right:39px; "> Rejoin Group</a>
+                        Australia wallis
+                    </span> 
+             </li></li>
+                <p class="alert  blockquote-footer">trip ended</p>
+            </ul>
+            </div>
+           
+            
+        
+        </div>
+       
+        <div class="col">
+                <%if(files){%>
+                <%files.forEach(function(file){%>
+                <div class="">
+                    <div class="">
+                            <%if(file.isImage){%>
+                            
+                            <!-- <form method="POST" action="/files/<%= file._id%>?_method=DELETE">
+                                        <button class="btn btn-danger"style="">Delete</button>
+                                    </form> -->
+                            <a href="image/<%= file.filename%>" class=""><img class="rounded " style="float: left;" src="image/<%= file.filename%>" alt="Card image cap"></a>
+                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                                content.</p>
+                 -->
+                
+                        <%}else{%>
+                        <h5 class="card-title">
+                            <%=file.filename%>
+                        </h5>
+                        <%}%>
+                    </div>
+                    <%})%>
+                    <% } else { %>
+                
+                    <%}%>
+        </div>
+    </div>
+
+        </div>
+    </div>
+    
+    
+    
+    </div>
+   
+</div>
+
+<script>
+    $('.ui.modal')
+            .modal('show') ;
+    function myFunction() {
+        var x = document.getElementById("myFile");
+        x.disabled = true;
+    }
+</script>
