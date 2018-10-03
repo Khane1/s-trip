@@ -20,7 +20,7 @@ console.log(__dirname + "/public")
 //init gfs
 let gfs;
 
-const mongoURI ='mongodb://localhost/Aheru';
+const mongoURI ='mongodb://127.0.0.1/Aheru';
 const conn = mongoose.createConnection(mongoURI);
 conn.once('open',()=>{
     //init stream
