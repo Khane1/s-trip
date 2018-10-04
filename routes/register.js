@@ -20,7 +20,7 @@ module.exports = function(_,passport,Uvalid){
       loginPage: function(req, res) {
         const errors = req.flash("error");
         return res.render("login", {
-          title: "GPchat | Login",
+          title: "Aheru | Login",
           messages: errors,
           hasErrors: errors.length > 0
         });
@@ -36,7 +36,7 @@ module.exports = function(_,passport,Uvalid){
       indexPage: function(req, res) { //which is Signup
         const errors = req.flash("error");
         return res.render("register", {
-          title: "GPchat | SignUp",
+          title: "Aheru | SignUp",
           messages: errors,
           hasErrors: errors.length > 0
         }); //if it > 0 t / < 0 f //alert message display only when there is err

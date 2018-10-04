@@ -1,4 +1,5 @@
 <%include ./partials/header%>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <% if(hasErrors)  { %>
      <% _.forEach(messages, function(error){ %>
         <div class="alert alert-danger text-center">
@@ -28,22 +29,13 @@
                     <label for="password">Password</label>
                     <input type="password" class="form-control mb-3" name="password" required>
                     <div class="field-wrapper">
-                        <a href="/auth/facebook" style="outline: 0; text-decoration: none;">
-                            <span class="icon-facebook left"></span>
-                            <!-- <i class="icmn-facebook2" ></i> -->
-                            <button class="btn btn-primary width-20" style="background-color:#3b5998 !important; border-color: #3b5998 !important; outline: 0; padding: 1px 16px !important; 1.3rem!important">
-                                <i class="icmn-facebook2"></i>
-                            </button>
-                            <!-- <span>Sign in with Facebook</span> -->
+                        <a href="/auth/facebook" class="btn btn-primary width-20" style="background-color:#3b5998 !important; border-color: #3b5998 !important; outline: 0; padding: 1px 16px !important; 1.3rem!important outline: 0; text-decoration: none;">
+                               <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="/auth/google" style="outline: 0; text-decoration: none;">
-                    
-                            <!-- <span> Sign in with Google</span> -->
-                            <button class="btn btn-primary width-20" style="background-color:  #d34836 !important; border-color:  #d34836 !important; padding: 1px 16px;">
-                                <i class="icmn-google-plus2"></i>
-                            </button>
+                        <a href="/auth/google"class="btn btn-primary width-20" style="background-color:  #d34836 !important; border-color:  #d34836 !important; padding: 1px 16px; outline: 0; text-decoration: none;">
+                                <i class="fab fa-google-plus-g"></i>
                         </a>
-                    </div>
+                    </div><br>
                     <button type='submit' class="btn btn-primary">Submit</button>
                 </div>
             </form>
