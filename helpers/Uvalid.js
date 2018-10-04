@@ -19,7 +19,7 @@ module.exports = function () {
                     });
                     //add err message to flash 
                     req.flash('error',messages);
-                    res.redirect('/'); //then redirect back 
+                    res.redirect('/register'); //then redirect back 
                 })
                 .catch((err)=>{ //return next
                     return next();
