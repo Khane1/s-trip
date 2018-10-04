@@ -75,7 +75,7 @@ container.resolve(function (register, _, home ,admin, results, group, landing, t
         const server = http.createServer(app);
         const io = socketIO(server);
         server.listen(process.env.PORT || 3000, function() {
-          console.log("Listening on port 3000");
+          console.log(`Listening on port 3000`);
         });
 
         
