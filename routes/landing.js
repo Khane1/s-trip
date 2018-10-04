@@ -1,7 +1,14 @@
-var express = require("express");
-var router = express.Router();
-router.get("/landing", function (req, res) {
-    res.render("landing");
-})
 
-module.exports = router;
+module.exports = function () {
+  return {
+    SetRouting: function (router) {
+      router.get("/", this.landingPage); //i am using this keyword i have this function 
+
+    },
+    landingPage: function (req, res) {
+      res.render("landing");
+    },
+
+
+  }
+}

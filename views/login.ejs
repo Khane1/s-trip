@@ -1,19 +1,41 @@
 <%include ./partials/header%>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<% if(hasErrors) {%>
+				
+<% _.forEach(messages, function(error){ %>
+    <div class="alert alert-danger text-center">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <%= error %>
+            <br>
+    </div>
+    <% }) %>
+
+    <% } %>
+
 <div class="row">
+
     <div class="col-md-6 mx-auto">
         <div class="card card-body">
             <img class="logo" src="/img/logo.png" alt="">
             <h3 class="text-center">
                 Account Login
             </h3>
-            <form action="/users/login" method="POST">
+            <form action="/login" method="POST">
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" required>
+                    <input type="email" class="form-control" name="email" >
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control mb-3" name="password" required>
+                    <input type="password" class="form-control mb-3" name="password" >
+                    <div class="field-wrapper">
+                        <a href="/auth/facebook" class="btn btn-primary width-20" style="background-color:#3b5998 !important; border-color: #3b5998 !important; outline: 0; padding: 1px 16px !important; 1.3rem!important outline: 0; text-decoration: none;">
+                               <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="/auth/google"class="btn btn-primary width-20" style="background-color:  #d34836 !important; border-color:  #d34836 !important; padding: 1px 16px; outline: 0; text-decoration: none;">
+                                <i class="fab fa-google-plus-g"></i>
+                        </a>
+                    </div><br>
                     <button type='submit' class="btn btn-primary">Submit</button>
                 </div>
             </form>

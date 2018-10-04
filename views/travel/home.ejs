@@ -24,29 +24,20 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="/results" method="post">
                             <div class="form-group">
                                 <label for="formGroupExampleInput"class="lead">Country</label>
-                                <input type="text" class="form-control text-center" id="formGroupExampleInput" placeholder="What Country do you want to visit?">
+                                <input type="text" name="country" class="form-control text-center" id="formGroupExampleInput" placeholder="What Country do you want to visit?">
                             </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput2" class="lead">City</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="City">
-                            </div>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Date From & Date To </span>
-                                </div>
-                                <input type="date" aria-label="First name" class="form-control">
-                                <input type="date" aria-label="Last name" class="form-control">
-                            </div>
-                        </form>
+                            
+                       
                     </div>
                      <p class="lead text-center">Feel free to join New people and travel</p>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Join</button>
+                        <button type="submit" class="btn btn-primary">Join</button>
                     </div>
+                     </form>
                 </div>
             </div>
         </div>
@@ -74,7 +65,7 @@
         <div class="col">
             <div class="card card-body">
                 <h1 class="lead text-center">Groups recently attended</h1>
-            <a href=""id="ui modal"class="btn btn-success">start a new group</a>
+            <a href="/dashboard"id="ui modal"class="btn btn-success">start a new group</a>
 <!-- this is where the group application will begin -->
                 <div class="ui modal">
                     <i class="close icon"></i>
@@ -104,29 +95,24 @@
                 </div>
 
 
+            <form action="/home" method="POST" id="favorite">
+            <% _.forEach(chunks, function(val) {  %>
+                    <% _.forEach(val, function(val2) {  %>
             <ul class="mt-4">
                 <li class="lead"> <span style="color:green;">
-                    <a href="" class="btn btn-secondary" style="font-size:10px;  margin-right:39px; "> Rejoin Group</a>
-                    Mega group China
-                </span> </li>
-                <small class="blockquote-footer">closed by admin</small>
-            </ul>
-            <ul class="mt-4">
-                <li class="lead"> <span style="color:green;">
-                    <a href="" class="btn btn-primary" style="font-size:10px;  margin-right:39px; "> Rejoin Group</a>
-                        Mega group China
+                <div class="img-wrapper" data-toggle="modal" data-target=".modal-2">
+                    <img src="/uploads/<%= val2.image %>" alt="" class="img-responsive post-image" />
+                  </div>
+                    <a href="/group/<%= val2.name.replace(/ /g, "-") %>" class="btn btn-primary" style="font-size:10px;  margin-right:39px; "> Rejoin Group</a>
+                        <%= val2.name %>
                     </span> 
                </li></li>
-                <p class="alert  blockquote-footer">no of members 10</p>
+                <p class="alert  blockquote-footer">no of members <%= val2.fans.length %> <%= val2.country %></p>
             </ul>
-            <ul class="mt-4">
-                <li class="lead"> <span style="color:green;">
-                    <a href="" class="btn btn-dark" style="font-size:10px;  margin-right:39px; "> Rejoin Group</a>
-                        Australia wallis
-                    </span> 
-             </li></li>
-                <p class="alert  blockquote-footer">trip ended</p>
-            </ul>
+            <% }) %>
+              <% }) %>
+            </form>
+            
             </div>
            
             
@@ -134,30 +120,21 @@
         </div>
        
         <div class="col">
-                <%if(files){%>
-                <%files.forEach(function(file){%>
+
                 <div class="">
                     <div class="">
-                            <%if(file.isImage){%>
                             
-                            <!-- <form method="POST" action="/files/<%= file._id%>?_method=DELETE">
+                            <!-- <form method="POST" action="/files/?_method=DELETE">
                                         <button class="btn btn-danger"style="">Delete</button>
                                     </form> -->
-                            <a href="image/<%= file.filename%>" class=""><img class="rounded " style="float: left;" src="image/<%= file.filename%>" alt="Card image cap"></a>
+                            <a href="image/" class=""><img class="rounded " style="float: left;" src="image/" alt="Card image cap"></a>
                             <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
                                 content.</p>
                  -->
                 
-                        <%}else{%>
                         <h5 class="card-title">
-                            <%=file.filename%>
                         </h5>
-                        <%}%>
                     </div>
-                    <%})%>
-                    <% } else { %>
-                
-                    <%}%>
         </div>
     </div>
 
