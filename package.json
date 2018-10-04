@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "app",
   "main": "app.js",
+  "engines": {
+    "node": "8.11.1",
+    "npm": "5.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
   "dependencies": {
     "async": "^2.6.0",
     "bcrypt-nodejs": "0.0.3",
@@ -35,9 +44,6 @@
     "socket.io": "^2.1.0"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Phil",
   "license": "ISC"
 }
