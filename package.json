@@ -7,6 +7,9 @@
     "node": "8.11.1",
     "npm": "5.6.0"
   },
+  "now": {
+    "dotenv": "variables.env.now"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
@@ -22,6 +25,7 @@
     "cookie-parser": "^1.4.3",
     "crypto": "^1.0.1",
     "dependable": "^1.1.0",
+    "dotenv": "^6.0.0",
     "ejs": "^2.5.9",
     "express": "^4.16.3",
     "express-fileupload": "^0.4.0",

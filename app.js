@@ -16,6 +16,9 @@ const {Global} = require('./helpers/Global');
 const { isEmpty } = require('./helpers/upload');
 const compression = require('compression'); //to compress the request that has been return
 const helmet = require('helmet'); //secruity perpres
+
+// import environmental variables from our variables.env file
+require('dotenv').config({ path: 'variables.env' });
 // const fs = require("fs");
 // var path = require("path");
 // const option = {
