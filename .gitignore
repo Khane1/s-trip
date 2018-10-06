@@ -3,5 +3,3 @@ package-lock.json
 .idea
 *.log
 DS_store
-variables.env
-variables.env.now
